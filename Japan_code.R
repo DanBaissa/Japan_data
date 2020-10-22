@@ -29,4 +29,13 @@ Japan2$Test[which(Japan2$kucode == dist[1] & Japan2$year == year[1])] <- sum(Jap
 
 # All that needs to be done now is turn the code in line 28 into a for loop. dist[1] would be replaced with dist[i] and year [1] replaced with year[j].
 
+
+for (j in 1:length(year)) {
   
+  for (i in 1:length(dist)) {
+    
+    Japan2$Test[which(Japan2$kucode == dist[i] & Japan2$year == year[j])] <- sum(Japan2$ku_voteshare[which(Japan2$LDPCombined==1 & Japan2$year == year[j] & Japan2$kucode == dist[i])])
+  
+  }
+  
+}
